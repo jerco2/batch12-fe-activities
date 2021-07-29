@@ -2,10 +2,14 @@ html{
     scroll-behavior: smooth;
 }
 body{
+    box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 400;
     line-height: 1.7;
-    background-color: #0F1012;
+    background-image: url("https://media.vogue.fr/photos/5c3622a4bc36ebdcec6d1f8f/master/w_3600,h_2400,c_limit/gettyimages_89038515_jpg_6034.jpg?lang=eng");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:100%;
 }
 main{
     width:100%;
@@ -53,6 +57,7 @@ h2{
 }
 /*--IMAGE--*/
 #img-div{
+    background-color: #0F1012;
     width:100%;
 }
 #img-div > img{
@@ -94,6 +99,7 @@ h2{
 
 /*--ABOUT (tribute info)--*/
 #tribute-info {
+    background-color:#0F1012;
     color:white;
     text-align: center;
 }
@@ -103,33 +109,51 @@ h2{
 
 /*--ALBUMS--*/
 #albums{
-    background-color: white;
     width: 100%;
 }
 #albums > h1{
+    color:white;
+    text-align: center;
+}
+#albums > h3 {
+    color:white;
+    text-align: center;
+}
+.album-container{
+    margin: 1rem 10rem;
     text-align: center;
 
 }
-.album-container{
-    margin: 5rem 10rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-
-}
 .album-container > img {
-    width: 250px;
+    width: 100px;
     margin: 1rem 1rem;
+    transition: ease-out;
+    transition-duration: 0.2s;
+    border-radius: 50%;
+    border: 2px solid black;
 }
+.album-container > img:hover{
+    width: 250px;
+    border-radius: 0;
+}
+
 
 /*--ARTICLES*/
+#articles{
+    background-color: #0F1012;
+    width: 100%;
+}
 #articles > h1{
     color:white;
     text-align: center;
 }
 
 /*--READ MORE button--*/
+#bottom{
+    background-color: #0F1012;
+    margin-bottom: 0;
+    width:100%;
+}
 #tribute-link{
     text-align: center;
 }
@@ -151,5 +175,6 @@ h2{
 }
 
 footer{
+    text-align: center;
     color:white;
 }
