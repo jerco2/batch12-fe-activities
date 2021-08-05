@@ -1,0 +1,276 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin:0px;
+    background-image: url("https://i.pinimg.com/736x/6d/9c/a3/6d9ca3f1fff343899b53f8735db7902f.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.container-main{
+    display:flex;
+    justify-content: center;
+    background-color: white;
+    width: 90%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3vh;
+    margin-top: 5vh;
+    border-radius: 25px;
+    box-shadow: 5px 10px 25px;
+}
+.image-container{
+    width:40%;
+    height: auto;
+    display:flex;
+    overflow: hidden;
+    border-radius: 25px 0 0 25px;
+}
+.image-container > img{
+    width: 100%;
+    height: auto;
+}
+
+
+#title{
+    color:#c88937;
+    margin:0;
+}
+#description{
+    margin:0;
+}
+
+.survey-container{
+    margin-top: 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width:60%;
+    height: auto;
+    margin-bottom: 2rem;
+}
+.survey-container > p {
+    margin-left: 1rem;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+#survey-form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top:2rem;
+    line-height: 1.5rem;
+    width: 60%;
+}
+
+#survey-form > label {
+    color: #c88937;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: .75rem;
+    margin-top: 10px;
+}
+
+.text-line{
+    padding: 1px 5px 5px 1px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+}
+input::placeholder {
+    color: #a7a7a7;
+  }
+
+.split{
+    display:flex;
+    position:relative;
+    width: auto;
+}
+
+.split > #membership-container > label {
+    color: #c88937;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: .75rem;
+    margin-top: 10px;
+}
+
+.split > #membership-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.split > #age-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.split > #age-container > label {
+    color: #c88937;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: .75rem;
+    margin-top: 10px;
+}
+
+/*survey*/
+.scontainer{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px;
+    margin:0 0 2rem 0;
+}
+
+.scontainer > h5 {
+    padding: 0px;
+    margin: 20px 0 0 0;
+    text-align: center;
+}
+.survey{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.survey-label {
+    line-height: 0px;
+    width: 50%;
+}
+.survey-label > h6 {
+    margin: 1rem 0;
+}
+
+.survey-value{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    line-height: 0px;
+}
+
+.comment-container {
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+.comment-container > label {
+    color: #c88937;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: .75rem;
+    margin-top: 10px;
+}
+
+#radio1:checked {
+    margin-left: 0;
+}
+#radio2:checked {
+    margin-left: 20%;
+}
+#radio3:checked {
+    margin-left: 40%;
+}
+
+.checkbox-container > h5 {
+    text-align: center;
+}
+
+#choices{
+    display:flex;
+    justify-content: space-around;
+}
+
+#submit-btn {
+    display:flex;
+    justify-content: center;
+}
+#submit-btn > input{
+    border:2px solid #c88937;
+    padding: 1rem 1.5rem;
+    width:auto;
+    color: #c88937;
+    font-weight: bold;
+    transition: ease-out;
+    transition-duration: 0.2s;
+    text-transform: uppercase;
+}
+
+#submit-btn > input:hover{
+    background-color: #c88937;
+    padding: 1rem 2rem;
+    width:auto;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width: 900px) {
+
+    
+    .split{
+        display:flex;
+        flex-direction: column;
+        position:relative;
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .container-main{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        width: 90%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 3vh;
+        margin-top: 5vh;
+        border-radius: 25px;
+        box-shadow: 5px 10px 25px;
+    }
+
+    .image-container{
+        width:100%;
+        height: 20rem;
+        border-radius: 25px 25px 0px 0px;
+        background-color: gray;
+    }
+    .image-container >  img {
+        width: 100%;
+        height: auto;
+    }
+
+    .survey-container{
+        margin-top: 2rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width:80%;
+        height: auto;
+        margin-bottom: 2rem;
+    }
+    .split{
+        display:flex;
+        flex-direction: column;
+        position:relative;
+        width: auto;
+    }
+    #choices{
+        display:flex;
+        flex-direction: column;
+    }
+
+}

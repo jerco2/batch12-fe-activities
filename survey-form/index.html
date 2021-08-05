@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Survey Form</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <main class="container-main">
+
+            <!--Image-->
+            <div class="image-container">
+                <img src="https://images.pexels.com/photos/302896/pexels-photo-302896.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+            </div>
+
+            <!--Survey-->
+            <div class="survey-container">
+                    <!--USER STORY #1: As a user, I want to see a title with id="title" in H1 sized text.-->
+                <h1 id="title">The CoffeeHUB feedback form</h1>
+                    <!--USER STORY #2: As a user, I want to see a short explanation with id="description" in P sized text-->
+                <p id="description">Thank you for taking the time to take this survey.</p>
+                    <!--USER STORY #3: As a user, I want to see a form with id="survey-form" -->
+                <form action="success.html" id="survey-form" method="GET">
+                        <!--USER STORY #11: For the name, email, and number input fields, I want to see a placeholder text that gives me a description
+                            or instructions for each field-->
+                        <!--USER STORY #10: For the name, email, and number inputs field inside the form I can see corresponding labels that describe the purpose
+                            of each field with the following ids: id="name-label", id="email-label", id="number-label"-->
+                        <!--USER STORY #4: As a user, I want to be required to enter my name in a field with id="name" (inside form element)-->
+                    <label for="name" id="name-label">full name </label> <input type="text" name="name" class="text-line" id="name" placeholder="e.g. Jerico Godoy" required>
+                        <!--USER STORY #5: As a user, I want to be required to enter an email in a field with id="email (inside form element)"-->
+                        <!--USER STORY #6: As a user, I want to see a validation error if I enter an email that is not formatted correctly-->
+                    <label for="email" id="email-label">email </label> <input type="email" name="email" class="text-line" id="email" placeholder="e.g. sample-email@gmail.com" required>
+                        <!--USER STORY #7: As a user, I should be able to enter a number in a field with id="number"-->
+                        <!--USER STORY #8: As a user, if I enter non-numbers in the number input, I want to see an HTML5 validation error-->
+                    <label for="number" id="number-label">number </label> <input type="text" name="contact" class="text-line" id="number" placeholder="e.g. 09123456789" pattern="[0]+\d{10}$" required>
+                    <div class="split">
+                        <div id="membership-container">
+                            <label for="dropdown" id="membership-label">Your membership: </label>
+                            <!--USER STORY #12: Inside the form element, I want a select an option from a dropdown that has a corresponding id="dropdown"-->
+                            <select name="membership" id="dropdown" required>
+                                <option id="splaceholder" value="" disabled selected>-- Please select your membership --</option>
+                                <option value="none">Not yet a member</option>
+                                <option value="regular">Regular</option>
+                                <option value="gold">Gold</option>
+                            </select>
+                        </div>
+                        <div id="age-container">
+                            <!--USER STORY #9: As a user, if I enter numbers outside the range of the number input, which are defined by the min and max attributes, I will see an HTML5 validation error-->
+                            <label for="age" id="number-label">Age</label><input type="number" name="age" id="age" placeholder="e.g. 60" pattern="[0-9]{3}" min="1" max="110" required>
+                        </div>
+                    </div>
+                    <div class="checkbox-container">
+                        <h5>Have you followed our socials?</h5>
+                        <div id="choices">
+                        <div>
+                            <input type="checkbox" id="a1" name="a1" value="Facebook">
+                            <label for="a1"> Facebook</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="a2" name="a2" value="Instagram">
+                            <label for="a2"> Instagram</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="a3" name="a3" value="Twitter">
+                            <label for="a3"> Twitter</label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="scontainer">
+                        <h5>Tell us your coffee experience</h5>
+                        <div class="survey">
+                            <div class="survey-label">
+                                <h6></h6>
+                            </div>
+                            <div class="survey-value">
+                                <h6>5</h6>
+                                <h6>4</h6>
+                                <h6>3</h6>
+                                <h6>2</h6>
+                                <h6>1</h6>
+                            </div>
+                        </div>
+                    <!--USER STORY #13: Inside the form element, I want to select a field from one or more groups of radio buttons. Each group should be grouped using the name attribute-->
+                    <div class="survey">
+                        <div class="survey-label">
+                            <h6>Waiting time</h6>
+                        </div>
+                        <div class="survey-value">
+                            <input type="radio" name="q1" value="5" required>
+                            <input type="radio" name="q1" value="4">
+                            <input type="radio" name="q1" value="3">
+                            <input type="radio" name="q1" value="2">
+                            <input type="radio" name="q1" value="1">
+                        </div>
+                    </div>
+                    <div class="survey">
+                        <div class="survey-label">
+                            <h6>Food and drink</h6>
+                        </div>
+                        <div class="survey-value">
+                            <input type="radio" name="q2" value="5" required>
+                            <input type="radio" name="q2" value="4">
+                            <input type="radio" name="q2" value="3">
+                            <input type="radio" name="q2" value="2">
+                            <input type="radio" name="q2" value="1">
+                        </div>
+                    </div>
+                    <div class="survey">
+                        <div class="survey-label">
+                            <h6>Environment</h6>
+                        </div>
+                        <div class="survey-value">
+                            <input type="radio" name="q2" value="5" required>
+                            <input type="radio" name="q2" value="4">
+                            <input type="radio" name="q2" value="3">
+                            <input type="radio" name="q2" value="2">
+                            <input type="radio" name="q2" value="1">
+                        </div>
+                    </div>
+                    </div>
+                    <!--USER STORY #15: Inside the form element, I want to see a textarea at the end for additional comments-->
+                    <div class="comment-container">
+                        <label id="feedback-label" for="feedback">Additional comment</label>
+                        <textarea id="feedback" rows="4" cols="50" placeholder="Write something about your coffee experience.."></textarea>
+                    </div>
+                    <!--USER STORY #16: Inside the form element, I want to see a button with id="submit" to submit all my inputs-->
+                    <div id="submit-btn">
+                        <input type="submit" name="submit" id="submit">
+                    </div>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>
