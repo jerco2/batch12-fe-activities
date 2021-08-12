@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="./index.js" defer></script>
+        <title>Landing page project</title>
+        <link rel="stylesheet" type="text/css" href="./style.css">
+    </head>
+    <body>
+        <main class="main-container">
+            <!-- START OF NAVBAR -->
+            <!-- user story #3: within the #header  element I want to see a nav element with a corresponding id="nav-bar" -->
+            <nav class="navbar">
+                <input type="checkbox" class="toggler">
+                <div class="hamburger"><div></div></div>
+                <div class="menu">
+                    <div>
+                        <div>
+                            <ul>
+                                <!-- user story #4: I want to see at least three clickable elements inside the nav element each with class="nav-link" -->
+                                <!-- user story #5: As a user, when I click a .nav-link button in the nav element, I am taken to thge corresponding section of the landing page -->
+                                <li class="nav-link"><a href="#">Home</a></li>
+                                <li class="nav-link"><a href="#about-us">About</a></li>
+                                <li class="nav-link"><a href="#socials">Socials</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- END OF NAVBAR -->
+            <!-- START OF SECTION#1 - HEADER -->
+            <!-- user story #1: As a user, I want my product landing page to have a header element with a corresponding id="header"  -->
+            <header id="header">
+                <div class="heading">
+                    <!-- user story #2: As a user, I want to see an image within the header element with a corresponding id="header-img"
+                    A company logo would make a good image here. -->
+                    <div id="header-img"><img src="https://theycb.files.wordpress.com/2021/06/axie_infinity_logo_2020_1.png?w=1568"></div>
+                        <div><h1>AXIE SCHOLAR PH</h1></div>
+                        <div><p>Get a chance to be part of our growing scholarship program</p></div>
+                    <div class="form-container">
+                        <!-- user story #7: As a user, my landing page should have a form element with a corresponding id="form" -->
+                        <form id="form" action="success.html" method="GET">
+                            <!-- user story #8: within the form, I want to see an input field with id="email" where I can enter an email address -->
+                            <!-- user story #9: The #email input field should have a placeholder text to let the user know what the field is for -->
+                            <!-- user story #10: The email input field uses HTML5 validation to confirm that the entered text is an email address -->
+                            <input id="email" name="email" type="Email" placeholder="Enter your email.." required>
+                            <!-- user story #11: Within the form, I want to see a submit input with a corresponding id="submit" -->
+                            <!-- user story #12: When I click #submit element, the email is submittied to a static page -->
+                            <input id="submit" type="submit" value="SIGN UP">
+                        </form>
+                    </div>
+                </div>
+            </header>
+            <!-- END OF SECTION#1 - HEADER -->
+            <!-- START OF SECTION#2 - REQUIREMENTS & BENEFITS -->
+            <div class="section2">
+                <div class="section2div">
+                    <div class="section2-imgcontainer">
+                        <img src="./Assets/SLP.png">
+                    </div>
+                    <div class="section2-description">
+                        Aim at least <br>
+                        75 - 150 slp daily,<br>
+                        1500 slp payout
+                    </div>
+                </div>
+                <div class="section2div">
+                    <div class="section2-imgcontainer">
+                        <img src="./Assets/BOOK.png">
+                    </div>
+                    <div class="section2-description">
+                        Helpful guides for breeding and farming
+                    </div>
+                </div>
+                
+                <div class="section2div">
+                    <div class="section2-imgcontainer">
+                        <img src="./Assets/HEART.png">
+                    </div>
+                    <div class="section2-description">
+                        Toxic free environment
+                    </div>
+                </div>
+                <div class="section2div">
+                    <div class="section2-imgcontainer">
+                        <img src="./Assets/6040.png">
+                    </div>
+                    <div class="section2-description">
+                        60:40<br>
+                        payout share
+                    </div>
+                </div>
+            </div>
+            <!-- END OF SECTION#2 - REQUIREMENTS & BENEFITS -->
+            <!-- START OF SECTION#3 - ABOUT US -->
+            <div class="section3">
+                <div id="about-us">
+                    <div class="section3-txtcontainer">
+                        <p>Axie scholar ph aims to provide a way for the needful
+                            to earn and make use of the time they spend using their
+                            mobile devices or laptop.<br><br>
+                            With more than 20 team managers, Axie Scholar Ph is one of the 
+                            fastest growing axie scholarship programs.<br><br><br>
+                            Get a chance to be part of our growing community!
+                        </p>
+                    </div>
+                    <div class="videocontainer">
+                        <video id="trailer" autoplay muted loop>
+                            <source src="./Assets/AxieNEWvid.mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="socialproof">
+                    <div class="proofcontainer">
+                        <img src="Assets/LoremIpsum1.jpg">
+                    </div>
+                    <div class="proofcontainer">
+                        <img src="Assets/LoremIpsum2.jpg">
+                    </div>
+                    <div class="proofcontainer">
+                        <img src="./Assets/LoremIpsum3.jpg">
+                    </div>
+                </div>
+            </div>
+            <!-- END OF SECTION#3 - ABOUT US -->
+            <!-- FINAL CALL TO ACTION -->
+            <div class="finalcall2action">
+                <h3>Want a chance to be part of our community? Sign up now!</h3>
+                <form id="form2" action="success.html" method="GET">
+                    <input id="email2" name="email" type="Email" placeholder="Enter your email.." required>
+                    <input id="submit2" type="submit" value="SIGN UP">
+                </form>
+            </div>
+            <!-- END OF FINAL CALL TO ACTION -->
+            <!-- START OF SECTION#5 - SOCIALS -->
+            <div class="socialmedia">
+                <div id="socials">Follow our social media accounts</div>
+                <div class="socialmedia-container">
+                    <div class="icon-container">
+                        <a target="_blank" href="https://www.facebook.com/"><img src="./Assets/fbicon.png" alt=""></a>
+                    </div>
+                    <div class="icon-container">
+                        <a target="_blank" href="https://twitter.com/?lang=en"><img src="./Assets/twittericon.png" alt=""></a>
+                    </div>
+                    <div class="icon-container">
+                        <a target="_blank" href="https://www.instagram.com/"><img src="./Assets/igicon.png" alt=""></a>
+                    </div>
+                    <div class="icon-container">
+                        <a target="_blank" href="https://discord.com/"><img src="./Assets/discordicon.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <!-- END OF SECTION#5 - CONTACTS -->
+            <footer>
+                <h5>This site is created for learning purpose only. I do not own some of the logo and pictures used.</h5>
+            </footer>
+        </main>
+    </body>
+</html>

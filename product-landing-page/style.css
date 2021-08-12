@@ -1,0 +1,480 @@
+*{
+    margin:0px;
+    box-sizing: border-box;
+    margin:0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #EEEEEE;
+    overflow-x: hidden;
+}
+
+/* user story #15: My product landing page should utilize css flexbox at least once */
+.main-container{
+    display:flex;
+    flex-direction: column;
+    width:100vw;
+    height:auto;
+    margin:0px;   
+}
+
+/* navbar start */
+/* user story #13: the navbar should always be at the top of the viewport */
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1;
+}
+.navbar > .toggler{
+    position:fixed;
+    top:0;
+    right:0;
+    z-index:2;
+    cursor: pointer;
+    width:50px;
+    height:50px;
+    opacity:0;
+}
+.navbar > .hamburger{
+    position:fixed;
+    top:0;
+    right:0;
+    z-index:1;
+    width:60px;
+    height:60px;
+    padding:1rem;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar > .hamburger > div {
+    position:relative;
+    width:100%;
+    height:2px;
+    background-color:white;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    box-shadow:.5px .5px 2px black;
+}
+.navbar .hamburger > div:before,
+.navbar .hamburger > div:after{
+    content: '';
+    position:absolute;
+    z-index: 1;
+    top:-10px;
+    width:100%;
+    height:2px;
+    background:white;
+    box-shadow:.5px .5px 2px black;
+}
+
+.navbar > .hamburger > div:after{
+    top:10px;
+}
+
+.navbar .toggler:checked + .hamburger > div{
+    transform: rotate(135deg);
+}
+.navbar .toggler:checked + .hamburger > div:before,
+.navbar .toggler:checked + .hamburger > div:after{
+    top:0;
+    transform: rotate(90deg);
+}
+.navbar .toggler:checked:hover + .hamburger > div{
+    transform: rotate(225deg);
+}
+.navbar .toggler:checked ~ .menu{
+    visibility: visible;
+}
+.navbar .toggler:checked ~ .menu > div{
+    transform: scale(1);
+    transition-duration: 0.4s;
+}
+.navbar .toggler:checked ~ .menu > div > div{
+    opacity: 1;
+    transition-duration: opacity 0.4s ease;
+}
+
+.navbar .menu{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    visibility:hidden;
+    overflow:hidden;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar .menu > div{
+    background: rgba(39, 77, 81, 0.9);
+    border-radius: 50%;
+    width:200vw;
+    height:200vw;
+    display:flex;
+    flex:none;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    transition: all 0.4s ease;
+}
+.navbar .menu > div > div{
+    text-align: center;
+    max-width: 90vw;
+    max-height: 100vh;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.navbar .menu > div > div > ul > li {
+    list-style: none;
+    color: white;
+    font-size: 1.5rem;
+    padding:1rem;
+    transition: all 0.4s ease;
+}
+.navbar .menu > div > div > ul > li > a {
+    color:inherit;
+    text-decoration: none;
+    transition:color 0.4s ease;
+}
+.navbar .menu > div > div > ul > li:hover {
+    transform: scale(1.5);
+}
+/* navbar end */
+
+/* header start */
+#header{
+    width:100vw;
+    height:100vh;
+    background-image: url("./Assets/Axiebg.png");
+    background-size:80vw;
+    background-position-y:20%;
+    background-position-x:95%;
+    background-repeat: no-repeat;
+    display:flex;
+    justify-content: center;
+    background-color: #326E75;
+    
+}
+.heading{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#header-img{
+    display:flex;
+    justify-content: center;
+}
+#header-img > img {
+    width:25vw;
+}
+.heading > div > h1 {
+    color:white;
+    font-size: 5vw;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin:0;
+    padding:0;
+    border:0;
+}
+.heading > div > p {
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:1.5vw;
+    text-align: center;
+    margin:0;
+    padding:0;
+    border:0;
+}
+#form, #form2{
+    margin-top: 2rem;
+    display:flex;
+    justify-content: center;
+}
+#form2{
+    margin-top:1rem;
+}
+#email, #email2{
+    border-radius: 0.25rem;
+    border:0;
+    width:25vw;
+    font-size: 2vw;
+    transition: ease-out;
+    transition-duration: 0.2s;
+}
+#email:hover, #email2:hover{
+    width:27vw;
+}
+#submit, #submit2{
+    margin-left: 1vw;
+    border:0;
+    border-radius:.5vw;
+    padding:1vw 1.5vw;
+    font-size:1.25vw;
+    letter-spacing: 0.05vw;
+    background-color:white;
+    text-transform: uppercase;
+    transition: ease-out;
+    transition-duration: 0.2s;
+}
+#submit2{
+    background-color: cadetblue;
+    color:white;
+}
+#submit:hover, #submit2:hover{
+    background-color:cadetblue;
+    color:white;
+    letter-spacing: 0.2vw;
+}
+/* header end */
+
+/*section2 start*/
+.section2{
+    display:flex;
+    width:64vw;
+    justify-content: space-between;
+    margin:auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.section2div{
+    width:15vw;
+    display:flex;
+    flex-direction: column;
+    padding:1rem;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 1vw;
+    background-color:white;
+}
+.section2 > .section2-imgcontainer{
+    width:100%;
+    height:40%;
+    margin: auto;
+}
+.section2-imgcontainer > img {
+    width:5vw;
+}
+.section2-description{
+    height:60%;
+    margin-top: 1rem;
+    color: #595959;
+}
+
+/*section2 end*/
+
+/* section3 start */
+.section3{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:white;
+    width:64vw;
+    margin:auto;
+    padding-top: 1rem;
+}
+.section3 > h1 {
+    text-align: center;
+    font-size:3vw;
+}
+.section3-txtcontainer > p {
+    text-align: justify;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    color: #595959;
+}
+#about-us{
+    display:flex;
+}
+.section3-txtcontainer{
+    width:32vw;
+}
+.section3 .videocontainer {
+    width:32vw;
+}
+.videocontainer > #trailer{
+    width:100%;
+}
+
+.socialproof{
+    display:flex;
+    width:64vw;
+    margin-top: 1rem;
+}
+.proofcontainer{
+    width: 21.33vw;
+}
+.proofcontainer > img{
+    width: 100%;
+}
+/* section3 end */
+.finalcall2action > h3 {
+    color:#A8A8A8;
+    text-align: center;
+    margin-top: 1rem;
+}
+.socialmedia{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    color: #A8A8A8;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.socialmedia-container{
+    display:flex;
+    justify-content: space-between;
+    width:150px;
+    height:20px;
+    padding-top: .5rem;
+}
+.icon-container{
+    width:30px;
+}
+.icon-container > a > img{
+    width:100%;
+}
+/* footer start */
+footer{
+    text-align: center;
+    margin-top: 2vw;
+    font-size: 1vw;
+    color:#595959;
+}
+
+
+/* mobile view */
+/* user story #14: My product landing page should have at least one media query */
+@media only screen and (max-width:540px){
+    #header{
+        width:100vw;
+        height:100vh;
+        background-color: #326E75;
+        background-position-y: 90%;
+    }
+    #header-img> img {
+        width:25vh;
+    }
+
+    .heading{
+        margin-top: 3vw;
+        margin-bottom: 5vw;
+    }
+
+    .heading > div > h1{
+        font-size: 8vw;
+    }
+
+    .heading > div > p {
+        font-size: 2.5vw;
+    }
+    
+    .section2, .section3{
+        width:100vw;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .section2div{
+        width:50vw;
+        margin-bottom: 1rem;
+    }
+
+    #form,#form2{
+        flex-direction: column;
+        align-items: center;
+    }
+    #submit,#submit2{
+        width:20vw;
+        height:4vh;
+        margin-left: 0px;
+        margin-top:1rem;
+        font-size: 3vw;
+    }
+    #email,#email2{
+        width:60vw;
+        height:4vh;
+        font-size:3vw;
+    }
+    #email:hover,#email2:hover{
+        width:55vw;
+    }
+
+    footer{
+        font-size: 2vw;
+    }
+
+    .toggle-button{
+        display:flex;
+    }
+    .navbarlinks{
+        display:none;
+        width:100vw;
+        background-color:#326e75;
+        margin-top: 2rem;
+        box-shadow: 1px 1px 10px black;
+    }
+    .navbar{
+        flex-direction: column;
+        width:100vw;
+        top:0;
+        right:0;
+    }
+    .navbarlinks ul{
+        flex-direction: column;
+        width:100vw;
+    }
+    .navbarlinks li{
+        text-align: center;
+    }
+    .navbarlinks li:hover{
+        background-color:#418991;
+    }
+    .navbarlinks.active{
+        display:flex;
+    }
+
+    .section3 > h1 {
+        font-size:3vh;
+        margin-top:1rem;
+    }
+    .section3-txtcontainer{
+        width:100vw;
+    }
+
+    #about-us{
+        display:flex;
+        flex-direction: column;
+    }
+    .section3 .videocontainer {
+        width: 100%;
+    }
+    .videocontainer > #trailer {
+        width:100vw;
+    }
+    .carousel{
+        width:100vw;
+    }
+    .mySlides{
+        width:100vw;
+    }
+    .mySlides img{
+        width:100vw;
+    }
+    .socialproof{
+        display:flex;
+        flex-direction: column;
+        width:100vw;
+        margin-top: 1rem;
+    }
+    .proofcontainer{
+        width: 70vw;
+        margin:auto;
+    }
+}
