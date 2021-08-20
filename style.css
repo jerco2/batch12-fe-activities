@@ -16,6 +16,9 @@ body{
 #main-container{
     width:100vw;
 }
+#alert{
+    text-align: center;
+}
 #header{
     width:100vw;
     height:100vh;
@@ -74,7 +77,6 @@ body{
 #seemyworks-btn:hover{
     letter-spacing: .3rem;
 }
-
 #myworks{
     display:flex;
     padding-top: 2rem;
