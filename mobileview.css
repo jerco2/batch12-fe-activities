@@ -45,3 +45,10 @@
         width:100vw;
     }
 }
+
+@media only screen and (max-height:600px){
+    #header img{
+        transform:scale(1.5);
+        left:-100px;
+    }
+}
