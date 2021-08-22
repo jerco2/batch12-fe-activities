@@ -43,6 +43,9 @@
         width: 70vw;
         border-radius: 10px;
     }
+    #myworks a img:hover{
+        transform: none;
+    }
     .myworkstext-container{
         width:100vw;
     }
