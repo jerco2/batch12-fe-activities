@@ -38,6 +38,11 @@
     #myworks a{
         padding:1rem;
     }
+    #myworks a img {
+        margin:auto;
+        width: 70vw;
+        border-radius: 10px;
+    }
     .myworkstext-container{
         width:100vw;
     }
