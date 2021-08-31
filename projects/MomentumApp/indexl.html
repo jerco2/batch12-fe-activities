@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./mobileview.css">
+    <title>MomentumApp</title>
+    <script defer src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <main id="main">
+        <video id="videobg" autoplay muted loop>
+            <source src="./assets/videobg.mp4">
+        </video> 
+        <div id="main-container">
+            <button id="todobtn">Todo</button>
+            <div id="focus-container">
+                <!-- USER STORY 2: As a user, I want to see the current time on the homepage -->
+                <div id="clock"></div>
+                <!-- USER STORY 1: As a user, I want to put my name on the homepage -->
+                <!-- USER STORY 3: As a user, I want to see a greeting with my inputted name on the homepage -->
+                <div class="focus-inputField">
+                    <h1 id="greeting">What is your name <span id="yourname"></span></h1>
+                    <input id="inputName" type="text" autocomplete="off">
+                </div>
+                <!-- USER STORY 4: As a user, I want to add my main focus for today on the homepage and display it also on the same page -->
+                <div id="focus-inputField2">
+                    <h2 id="focusgreeting">Tell us your focus <span id="yourfocus"></span></h2>
+                    <input id="focusInput" type="text" autocomplete="off">
+                </div>
+                <!-- USER STORY 5: As a user, I want to see a random quote on the homepage -->
+                <div class="quote-wrapper">
+                    <div class="quote-body">
+                        <div class="icon-quote">
+                            <span class="icon"><i class="fas fa-quote-left"></i></span>
+                            <span class="quote">I'm not a great programmer,
+                                I'm just a good programmer with great habits.
+                            </span>
+                        </div>
+                        <div class="author"> -Kent Beck</div>
+                    </div>
+                    <div class="quote-buttons">
+                        <div class="edit-quote">
+                            <button id="editQuote">Modify Quote</button>
+                        </div>
+                        <div class="next-quote">
+                            <button id="newQuote">New Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- USER STORY 6: As a user, I want to add a todo list on the homepage and is able to see the list on the same page -->
+            <div id="todo-container">
+                <div class="wrapper">
+                        <div class="wrapperheader">
+                            <header>Todo App</header>
+                            <button id="todoclosebtn">close</i></button>
+                        </div>
+                    <div class="inputField">
+                        <input type="text" placeholder="Add your new todo">
+                        <button>add</button>
+                    </div>
+                    <ul class="todoList">
+                        <!-- DATA COMES FROM LOCAL STORAGE -->
+                    </ul>
+                    <div class="footer">
+                        <span>You have <span class="pendingNumb"></span> pending task</span>
+                        <button>Clear All</button>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
