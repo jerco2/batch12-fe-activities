@@ -8,6 +8,7 @@ body {
   margin: 0;
 }
 
+/* --used for X and O sizing-- */
 :root {
   --cell-size: 100px;
   --mark-size: calc(var(--cell-size) * 0.9);
@@ -15,11 +16,12 @@ body {
 
 main {
   display: flex;
+  flex-direction: column;
 }
 
 .board {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   display: grid;
   justify-content: center;
   align-content: center;
@@ -43,6 +45,7 @@ main {
   cursor: not-allowed;
 }
 
+/* --REMOVE OUTER BORDER START-- */
 .cell:first-child,
 .cell:nth-child(2),
 .cell:nth-child(3) {
@@ -59,6 +62,9 @@ main {
 .cell:nth-child(8) {
   border-bottom: none;
 }
+/* --REMOVE OUTER BORDER END */
+
+/* --X START-- */
 .cell.x::before,
 .cell.x::after {
   background-color: blue;
@@ -67,7 +73,6 @@ main {
 .board.x .cell:not(.x):not(.circle):hover::after {
   background-color: #aaf;
 }
-
 .cell.x::before,
 .cell.x::after,
 .board.x .cell:not(.x):not(.circle):hover::before,
@@ -85,20 +90,95 @@ main {
 .board.x .cell:not(.x):not(.circle):hover::after {
   transform: rotate(-45deg);
 }
+/* --X END-- */
+
+/* --CIRCLE START-- */
+.cell.circle::before {
+  background-color: red;
+}
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after {
+  background-color: #faa;
+}
 
 .cell.circle::before,
-.cell.circle::after {
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after {
   content: "";
   position: absolute;
   border-radius: 50%;
 }
-.cell.circle::before {
+.cell.circle::before,
+.board.circle .cell:not(.x):not(.circle):hover::before {
   width: var(--mark-size);
   height: var(--mark-size);
-  background-color: red;
 }
-.cell.circle::after {
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::after {
   width: calc(var(--mark-size) * 0.7);
   height: calc(var(--mark-size) * 0.7);
   background-color: white;
+}
+/* --CIRCLE END-- */
+
+/* --WINNING MESSAGE START-- */
+.winning-message {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 5rem;
+  flex-direction: column;
+}
+.winning-message button {
+  font-size: 3rem;
+  background-color: white;
+  padding: 0.25em 0.5em;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.winning-message button:hover {
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+}
+.winning-message.show {
+  display: flex;
+}
+/* --WINNING MESSAGE END-- */
+#scoreBoard {
+  display: flex;
+  justify-content: space-around;
+}
+
+.selectFirstPlayer {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+#selectPlayer {
+  font-size: 5rem;
+}
+.selectFirstPlayer button {
+  font-size: 3rem;
+  padding: 0.25em 3rem;
+  cursor: pointer;
+}
+.selectFirstPlayer.off {
+  display: none;
 }
