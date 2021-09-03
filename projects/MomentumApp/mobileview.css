@@ -1,46 +1,45 @@
-@media only screen and (max-width:768px ){
-    body{
-        overflow-x: hidden;
-    }
-    #main{
-        overflow-x: hidden;
-    }
-    #main-container{
-        overflow: hidden;
-    }
-    #videobg{
-        height:100vh;
-        width:auto;
-    }
-    #todo-container{
-        width:90vw;
-    }
-    .focus-inputField h1{
-        font-size:8vw;
-        padding:2rem;
-        text-align: center;
-    }
-    #inputName{
-        font-size:5vw;
-    }
-    #todobtn{
-        top:0.5rem;
-        right:0.5rem;
-    }
-    #clock{
-        font-size:20vw;
-        padding:0;
-        margin:0;
-    }
-    #greeting{
-        margin:0;
-        padding:1rem;
-    }
-    #focusgreeting{
-        width:80%;
-        text-align: center;
-        font-size: 4.0vw;
-        margin-top: 1rem;
-    }
-    
+@media only screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  #main {
+    overflow-x: hidden;
+  }
+  #main-container {
+    overflow: hidden;
+  }
+  #videobg {
+    height: 100vh;
+    width: auto;
+  }
+  #todo-container {
+    width: 90vw;
+  }
+  .focus-inputField h1 {
+    font-size: 8vw;
+    padding: 2rem;
+    text-align: center;
+  }
+  #inputName {
+    font-size: 5vw;
+  }
+  #todobtn {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+  #clock {
+    font-size: 20vw;
+    padding: 0;
+    margin: 0;
+  }
+  #greeting {
+    margin: 0;
+    padding: 1rem;
+  }
+  #focusgreeting {
+    width: 80%;
+    text-align: center;
+    font-size: 4vw;
+    margin-top: 1rem;
+  }
 }
