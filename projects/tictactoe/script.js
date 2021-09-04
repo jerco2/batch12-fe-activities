@@ -26,7 +26,7 @@ selectPlayerO.addEventListener("click", () => {
   board.classList.add(currentClass);
   selectFirstPlayer.classList.add("off");
 });
-
+/* --PLAYER ACTION ON CLICK-- */
 const handleClick = (e) => {
   const cell = e.target;
   /* placemark */
@@ -34,11 +34,26 @@ const handleClick = (e) => {
   /* check for win */
   /* check for draw */
   /* switch turns */
+  swapTurns();
 };
+/* --PLACE PLAYER MARK ON CELL-- */
 const placeMark = (cell, currentClass) => {
   cell.classList.add(currentClass);
+  console.log(boardStatus);
 };
-
+/*--SWAP TURNS, CHANGES BOARD CLASS-- */
+const swapTurns = () => {
+  if (currentClass === "x") {
+    board.classList.remove("x");
+    board.classList.add("circle");
+    currentClass = "circle";
+  } else {
+    board.classList.remove("circle");
+    board.classList.add("x");
+    currentClass = "x";
+  }
+};
+/* --ADD EVENTLISTENERS ON EVERY CELLS */
 for (cell of cellElements) {
   cell.addEventListener("click", handleClick, { once: true });
 }
