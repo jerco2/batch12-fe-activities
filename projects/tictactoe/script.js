@@ -2,7 +2,9 @@ const selectPlayerX = document.querySelector("#playerX");
 const selectPlayerO = document.querySelector("#playerO");
 const selectFirstPlayer = document.querySelector(".selectFirstPlayer");
 const board = document.querySelector(".board");
+const navigation = document.querySelector(".navigation");
 const reset = document.querySelector("#restartButton");
+const reset2 = document.querySelector("#restart2");
 const checkMoves = document.querySelector("#checkMoves");
 const winningMessage = document.querySelector(".winning-message");
 const winInnerText = document.querySelector("[data-winning-message-text]");
@@ -135,8 +137,9 @@ const checkwin = (currentClass) => {
 };
 
 /* --RESTART BUTTON-- */
-reset.addEventListener("click", () => {
+const restartFunction = () => {
   winningMessage.classList.remove("show");
+  navigation.classList.remove("show");
   for (cell of cellElements) {
     if (cell.classList.contains("x")) {
       cell.classList.remove("x");
@@ -146,11 +149,15 @@ reset.addEventListener("click", () => {
       cell.addEventListener("click", handleClick, { once: true });
     }
   }
-});
+};
+
+reset.addEventListener("click", restartFunction);
+reset2.addEventListener("click", restartFunction);
 
 /* --CHECK MOVES BUTTON-- */
 checkMoves.addEventListener("click", () => {
   winningMessage.classList.remove("show");
+  navigation.classList.add("show");
   for (cell of cellElements) {
     cell.removeEventListener("click", handleClick);
   }

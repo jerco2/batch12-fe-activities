@@ -183,3 +183,13 @@ main {
 .selectFirstPlayer.off {
   display: none;
 }
+
+.navigation {
+  display: none;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.navigation.show {
+  display: flex;
+}
