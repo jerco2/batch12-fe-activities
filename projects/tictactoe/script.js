@@ -2,6 +2,7 @@ const selectPlayerX = document.querySelector("#playerX");
 const selectPlayerO = document.querySelector("#playerO");
 const selectFirstPlayer = document.querySelector(".selectFirstPlayer");
 const board = document.querySelector(".board");
+const reset = document.querySelector("#restartButton");
 const winningMessage = document.querySelector(".winning-message");
 const winInnerText = document.querySelector("[data-winning-message-text]");
 const xScore = document.querySelector("#xScore");
@@ -20,7 +21,8 @@ const winningCombinations = [
   [2, 4, 6],
 ];
 
-let score = "";
+let scoreX = 0;
+let scoreO = 0;
 
 let move = [];
 let currentClass = "";
@@ -46,9 +48,13 @@ const handleClick = (e) => {
   if (checkwin(currentClass)) {
     /* --ADD SCORES-- */
     if (currentClass === xClass) {
-      xScore.innerHTML += 1;
+      scoreX = scoreX + 1;
+      console.log(scoreX);
+      xScore.innerHTML = scoreX.toString();
     } else {
-      oScore.innerHTML += 1;
+      scoreO = scoreO + 1;
+      console.log(scoreO);
+      oScore.innerHTML = scoreO.toString();
     }
     winInnerText.innerHTML = `${currentClass} Wins!`;
     winningMessage.classList.add("show");
@@ -127,4 +133,16 @@ const checkwin = (currentClass) => {
   });
 };
 
-/* --UPDATE SCORE-- */
+/* --RESTART BUTTON-- */
+reset.addEventListener("click", () => {
+  winningMessage.classList.remove("show");
+  for (cell of cellElements) {
+    if (cell.classList.contains("x")) {
+      cell.classList.remove("x");
+      cell.addEventListener("click", handleClick, { once: true });
+    } else {
+      cell.classList.remove("circle");
+      cell.addEventListener("click", handleClick, { once: true });
+    }
+  }
+});
