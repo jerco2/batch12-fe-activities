@@ -145,6 +145,7 @@ main {
   border: none;
   cursor: pointer;
   text-transform: uppercase;
+  margin-bottom: 0.5rem;
 }
 .winning-message button:hover {
   border: 1px solid white;

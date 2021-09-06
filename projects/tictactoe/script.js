@@ -3,6 +3,7 @@ const selectPlayerO = document.querySelector("#playerO");
 const selectFirstPlayer = document.querySelector(".selectFirstPlayer");
 const board = document.querySelector(".board");
 const reset = document.querySelector("#restartButton");
+const checkMoves = document.querySelector("#checkMoves");
 const winningMessage = document.querySelector(".winning-message");
 const winInnerText = document.querySelector("[data-winning-message-text]");
 const xScore = document.querySelector("#xScore");
@@ -144,5 +145,13 @@ reset.addEventListener("click", () => {
       cell.classList.remove("circle");
       cell.addEventListener("click", handleClick, { once: true });
     }
+  }
+});
+
+/* --CHECK MOVES BUTTON-- */
+checkMoves.addEventListener("click", () => {
+  winningMessage.classList.remove("show");
+  for (cell of cellElements) {
+    cell.removeEventListener("click", handleClick);
   }
 });
