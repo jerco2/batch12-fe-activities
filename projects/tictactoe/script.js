@@ -2,6 +2,10 @@ const selectPlayerX = document.querySelector("#playerX");
 const selectPlayerO = document.querySelector("#playerO");
 const selectFirstPlayer = document.querySelector(".selectFirstPlayer");
 const board = document.querySelector(".board");
+const winningMessage = document.querySelector(".winning-message");
+const winInnerText = document.querySelector("[data-winning-message-text]");
+const xScore = document.querySelector("#xScore");
+const oScore = document.querySelector("#oScore");
 const cellElements = document.querySelectorAll("[data-cell");
 const xClass = "x";
 const oClass = "circle";
@@ -15,6 +19,8 @@ const winningCombinations = [
   [0, 4, 8],
   [2, 4, 6],
 ];
+
+let score = "";
 
 let move = [];
 let currentClass = "";
@@ -38,7 +44,14 @@ const handleClick = (e) => {
   const cell = e.target;
   placeMark(cell, currentClass);
   if (checkwin(currentClass)) {
-    console.log("WINNER!");
+    /* --ADD SCORES-- */
+    if (currentClass === xClass) {
+      xScore.innerHTML += 1;
+    } else {
+      oScore.innerHTML += 1;
+    }
+    winInnerText.innerHTML = `${currentClass} Wins!`;
+    winningMessage.classList.add("show");
   }
   /* check for draw */
   updatedBoardStatus();
@@ -113,3 +126,5 @@ const checkwin = (currentClass) => {
     });
   });
 };
+
+/* --UPDATE SCORE-- */
