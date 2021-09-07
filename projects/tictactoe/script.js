@@ -4,13 +4,15 @@ const selectFirstPlayer = document.querySelector(".selectFirstPlayer");
 const board = document.querySelector(".board");
 const navigation = document.querySelector(".navigation");
 const reset = document.querySelector("#restartButton");
+const previousMove = document.querySelector("#previousMove");
+const nextMove = document.querySelector("#nextMove");
 const reset2 = document.querySelector("#restart2");
 const checkMoves = document.querySelector("#checkMoves");
 const winningMessage = document.querySelector(".winning-message");
 const winInnerText = document.querySelector("[data-winning-message-text]");
 const xScore = document.querySelector("#xScore");
 const oScore = document.querySelector("#oScore");
-const cellElements = document.querySelectorAll("[data-cell");
+const cellElements = document.querySelectorAll("[data-cell]");
 const xClass = "x";
 const oClass = "circle";
 const winningCombinations = [
@@ -117,13 +119,12 @@ const updatedBoardStatus = () => {
   }
 
   history.push([row1, row2, row3]);
-
   console.log(history);
 };
 
 /* --UPDATE NUMBER OF MOVE-- */
 const updateMoves = () => {
-  move.push = move++;
+  move = history.length;
   console.log(`number of move: ${move}`);
 };
 
@@ -138,8 +139,10 @@ const checkwin = (currentClass) => {
 
 /* --RESTART BUTTON-- */
 const restartFunction = () => {
+  history = [];
   winningMessage.classList.remove("show");
   navigation.classList.remove("show");
+
   for (cell of cellElements) {
     if (cell.classList.contains("x")) {
       cell.classList.remove("x");
@@ -158,7 +161,53 @@ reset2.addEventListener("click", restartFunction);
 checkMoves.addEventListener("click", () => {
   winningMessage.classList.remove("show");
   navigation.classList.add("show");
+  nextMove.disabled = true;
+  previousMove.disabled = false;
   for (cell of cellElements) {
     cell.removeEventListener("click", handleClick);
   }
 });
+
+/* --PREVIOUS MOVE */
+previousMove.addEventListener("click", () => {
+  nextMove.disabled = false;
+  move = move - 1;
+  updateBoardOnClick();
+  console.log(history[move]);
+  console.log(`number of move: ${move + 1}`);
+  if (move < 1) {
+    previousMove.disabled = true;
+  }
+});
+
+/* --NEXT MOVE-- */
+nextMove.addEventListener("click", () => {
+  previousMove.disabled = false;
+  move = move + 1;
+  updateBoardOnClick();
+  console.log(history[move]);
+  console.log(`number of move: ${move + 1}`);
+
+  if (move === history.length - 1) {
+    nextMove.disabled = true;
+  }
+});
+
+const updateBoardOnClick = () => {
+  board.innerHTML = "";
+  console.log(history[move]);
+  for (let i = 0; i < history[move].length; i++) {
+    for (let j = 0; j < history[move][i].length; j++) {
+      console.log(history[move][i][j]);
+      let div = document.createElement("div");
+      div.classList.add("cell");
+
+      if (history[move][i][j] === "x") {
+        div.classList.add("x");
+      } else if (history[move][i][j] === "o") {
+        div.classList.add("circle");
+      }
+      board.append(div);
+    }
+  }
+};
