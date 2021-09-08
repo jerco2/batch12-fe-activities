@@ -12,7 +12,7 @@ const winningMessage = document.querySelector(".winning-message");
 const winInnerText = document.querySelector("[data-winning-message-text]");
 const xScore = document.querySelector("#xScore");
 const oScore = document.querySelector("#oScore");
-const cellElements = document.querySelectorAll("[data-cell]");
+const cellElements = document.querySelectorAll(".cell");
 const xClass = "x";
 const oClass = "circle";
 const winningCombinations = [
@@ -28,8 +28,7 @@ const winningCombinations = [
 
 let scoreX = 0;
 let scoreO = 0;
-
-let move = [];
+let move = 0;
 let currentClass = "";
 let history = [];
 
@@ -64,7 +63,7 @@ const handleClick = (e) => {
     winInnerText.innerHTML = `${currentClass} Wins!`;
     winningMessage.classList.add("show");
   }
-  /* check for draw */
+  /* missing check for draw */
   updatedBoardStatus();
   updateMoves();
   swapTurns();
@@ -124,40 +123,43 @@ const updatedBoardStatus = () => {
 
 /* --UPDATE NUMBER OF MOVE-- */
 const updateMoves = () => {
-  move = history.length;
+  move = history.length - 1;
   console.log(`number of move: ${move}`);
 };
 
 /* --CHECK FOR WINNER-- */
 const checkwin = (currentClass) => {
+  let x = document.querySelectorAll(".cell");
   return winningCombinations.some((combination) => {
     return combination.every((index) => {
-      return cellElements[index].classList.contains(currentClass);
+      return x[index].classList.contains(currentClass);
     });
   });
 };
 
-/* --RESTART BUTTON-- */
+/* --CHECK FOR DRAW START-- */
+/* --CHECK FOR DRAW END-- */
+
+/* --RESTART BUTTON START-- */
 const restartFunction = () => {
-  history = [];
+  location.reload();
+  /*  history = [];
+  move = 0;
   winningMessage.classList.remove("show");
   navigation.classList.remove("show");
 
-  for (cell of cellElements) {
-    if (cell.classList.contains("x")) {
-      cell.classList.remove("x");
-      cell.addEventListener("click", handleClick, { once: true });
-    } else {
-      cell.classList.remove("circle");
-      cell.addEventListener("click", handleClick, { once: true });
-    }
-  }
+  let x = document.querySelectorAll(".cell");
+  for (cell of x) {
+    cell.classList.remove("x");
+    cell.classList.remove("circle");
+    cell.addEventListener("click", handleClick, { once: true });
+  }*/
 };
-
 reset.addEventListener("click", restartFunction);
 reset2.addEventListener("click", restartFunction);
+/* --RESTART BUTTON END-- */
 
-/* --CHECK MOVES BUTTON-- */
+/* --CHECK MOVES BUTTON START-- */
 checkMoves.addEventListener("click", () => {
   winningMessage.classList.remove("show");
   navigation.classList.add("show");
@@ -167,8 +169,9 @@ checkMoves.addEventListener("click", () => {
     cell.removeEventListener("click", handleClick);
   }
 });
+/* --CHECK MOVES BUTTON END-- */
 
-/* --PREVIOUS MOVE */
+/* --PREVIOUS MOVE-- */
 previousMove.addEventListener("click", () => {
   nextMove.disabled = false;
   move = move - 1;
@@ -179,6 +182,7 @@ previousMove.addEventListener("click", () => {
     previousMove.disabled = true;
   }
 });
+/* --PREVIOUS MOVE END-- */
 
 /* --NEXT MOVE-- */
 nextMove.addEventListener("click", () => {
@@ -187,12 +191,13 @@ nextMove.addEventListener("click", () => {
   updateBoardOnClick();
   console.log(history[move]);
   console.log(`number of move: ${move + 1}`);
-
   if (move === history.length - 1) {
     nextMove.disabled = true;
   }
 });
+/* --NEXT MOVE END-- */
 
+/* --updateBoard function for previous & next move buttons-- */
 const updateBoardOnClick = () => {
   board.innerHTML = "";
   console.log(history[move]);
