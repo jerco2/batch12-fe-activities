@@ -156,10 +156,10 @@ main {
   display: flex;
 }
 /* --WINNING MESSAGE END-- */
-#scoreBoard {
+/* #scoreBoard {
   display: flex;
   justify-content: space-around;
-}
+} */
 
 .selectFirstPlayer {
   position: fixed;
@@ -185,11 +185,21 @@ main {
 }
 
 .navigation {
+  width: 50vw;
   display: none;
   justify-content: space-around;
-  margin-top: 1rem;
+  margin: 1rem auto;
+}
+.navigation button {
+  cursor: pointer;
 }
 
 .navigation.show {
   display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+  .navigation {
+    width: 100vw;
+  }
 }

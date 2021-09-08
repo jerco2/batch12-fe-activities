@@ -28,7 +28,7 @@ const winningCombinations = [
 
 let scoreX = 0;
 let scoreO = 0;
-let move = 0;
+let move = "";
 let currentClass = "";
 let history = [];
 
@@ -50,23 +50,18 @@ const handleClick = (e) => {
   const cell = e.target;
   placeMark(cell, currentClass);
   if (checkwin(currentClass)) {
-    /* --ADD SCORES-- */
-    if (currentClass === xClass) {
-      scoreX = scoreX + 1;
-      console.log(scoreX);
-      xScore.innerHTML = scoreX.toString();
-    } else {
-      scoreO = scoreO + 1;
-      console.log(scoreO);
-      oScore.innerHTML = scoreO.toString();
-    }
     winInnerText.innerHTML = `${currentClass} Wins!`;
     winningMessage.classList.add("show");
+    updatedBoardStatus();
+    updateMoves();
+  } else if (isDraw()) {
+    winInnerText.innerHTML = `DRAW!`;
+    winningMessage.classList.add("show");
+  } else {
+    updatedBoardStatus();
+    updateMoves();
+    swapTurns();
   }
-  /* missing check for draw */
-  updatedBoardStatus();
-  updateMoves();
-  swapTurns();
 };
 
 /* --PLACE PLAYER MARK ON CELL-- */
@@ -138,22 +133,16 @@ const checkwin = (currentClass) => {
 };
 
 /* --CHECK FOR DRAW START-- */
+const isDraw = () => {
+  return [...cellElements].every((cell) => {
+    return cell.classList.contains("x") || cell.classList.contains("circle");
+  });
+};
 /* --CHECK FOR DRAW END-- */
 
 /* --RESTART BUTTON START-- */
 const restartFunction = () => {
   location.reload();
-  /*  history = [];
-  move = 0;
-  winningMessage.classList.remove("show");
-  navigation.classList.remove("show");
-
-  let x = document.querySelectorAll(".cell");
-  for (cell of x) {
-    cell.classList.remove("x");
-    cell.classList.remove("circle");
-    cell.addEventListener("click", handleClick, { once: true });
-  }*/
 };
 reset.addEventListener("click", restartFunction);
 reset2.addEventListener("click", restartFunction);
@@ -168,18 +157,24 @@ checkMoves.addEventListener("click", () => {
   for (cell of cellElements) {
     cell.removeEventListener("click", handleClick);
   }
+
+  if (nextMove.disabled === true) {
+    nextMove.style.cursor = "not-allowed";
+  }
 });
 /* --CHECK MOVES BUTTON END-- */
 
 /* --PREVIOUS MOVE-- */
 previousMove.addEventListener("click", () => {
   nextMove.disabled = false;
+  nextMove.style.cursor = "pointer";
   move = move - 1;
   updateBoardOnClick();
   console.log(history[move]);
   console.log(`number of move: ${move + 1}`);
   if (move < 1) {
     previousMove.disabled = true;
+    previousMove.style.cursor = "not-allowed";
   }
 });
 /* --PREVIOUS MOVE END-- */
@@ -187,12 +182,14 @@ previousMove.addEventListener("click", () => {
 /* --NEXT MOVE-- */
 nextMove.addEventListener("click", () => {
   previousMove.disabled = false;
+  previousMove.style.cursor = "pointer";
   move = move + 1;
   updateBoardOnClick();
   console.log(history[move]);
   console.log(`number of move: ${move + 1}`);
   if (move === history.length - 1) {
     nextMove.disabled = true;
+    nextMove.style.cursor = "not-allowed";
   }
 });
 /* --NEXT MOVE END-- */
