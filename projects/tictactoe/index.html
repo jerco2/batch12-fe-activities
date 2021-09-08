@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <main id="main">
+      <div class="navigation">
+        <button id="previousMove">
+          <img src="Assets/Images/BTN-prevMove.png" />
+        </button>
+        <button id="restart2">
+          <img src="Assets/Images/BTB-restart2.png" />
+        </button>
+        <button id="nextMove" disabled>
+          <img src="Assets/Images/BTN-nextMove.png" />
+        </button>
+      </div>
+      <div class="board" id="board">
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+      </div>
+      <div class="winning-message" id="winningMessage">
+        <div class="winningContainer">
+          <div data-winning-message-text>X WINS!</div>
+          <button id="restartButton">
+            <img src="Assets/Images/restartBTN.png" />
+          </button>
+          <button id="checkMoves">
+            <img src="Assets/Images/checkMovesBTN.png" />
+          </button>
+        </div>
+      </div>
+      <div class="selectFirstPlayer">
+        <div class="selectplayerContainer">
+          <div id="tictactoe">TIC•TAC•TOE</div>
+          <div id="selectPlayer">Who goes first?</div>
+          <div id="playerChoice">
+            <button id="playerX">
+              <img src="./Assets/Images/playerXbutton.png" />
+            </button>
+            <button id="playerO">
+              <img src="./Assets/Images/playerObutton.png" />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <a href="https://www.freepik.com/vectors/frame"
+          >Frame vector created by upklyak - www.freepik.com</a
+        >
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Oi&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+/* --used for X and O sizing-- */
+:root {
+  --cell-size: 100px;
+  --mark-size: calc(var(--cell-size) * 0.9);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url("https://free4kwallpapers.com/uploads/originals/2020/11/15/sunset-vector-wallpaper.jpg");
+  background-size: cover;
+}
+
+.board {
+  position: fixed;
+  width: 100vw;
+  height: 90vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, auto);
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.cell.x,
+.cell.circle {
+  cursor: not-allowed;
+}
+
+/* --REMOVE OUTER BORDER START-- */
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+  border-top: none;
+}
+.cell:nth-child(3n + 1) {
+  border-left: none;
+}
+.cell:nth-child(3n + 3) {
+  border-right: none;
+}
+.cell:last-child,
+.cell:nth-child(7),
+.cell:nth-child(8) {
+  border-bottom: none;
+}
+/* --REMOVE OUTER BORDER END */
+
+/* --X START-- */
+.cell.x::before,
+.cell.x::after {
+  background-color: blue;
+}
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after {
+  background-color: #aaf;
+}
+.cell.x::before,
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after {
+  content: "";
+  position: absolute;
+  width: calc(var(--mark-size) * 0.15);
+  height: var(--mark-size);
+}
+.cell.x::before,
+.board.x .cell:not(.x):not(.circle):hover::before {
+  transform: rotate(45deg);
+}
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after {
+  transform: rotate(-45deg);
+}
+/* --X END-- */
+
+/* --CIRCLE START-- */
+.cell.circle::before {
+  background-color: red;
+}
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after {
+  background-color: #faa;
+}
+
+.cell.circle::before,
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+.cell.circle::before,
+.board.circle .cell:not(.x):not(.circle):hover::before {
+  width: var(--mark-size);
+  height: var(--mark-size);
+}
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::after {
+  width: calc(var(--mark-size) * 0.7);
+  height: calc(var(--mark-size) * 0.7);
+  background-color: white;
+}
+/* --CIRCLE END-- */
+
+/* --WINNING MESSAGE START-- */
+.winning-message {
+  display: flex;
+  position: absolute;
+  top: -1000px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 5rem;
+  flex-direction: column;
+  transition: all 0.4s ease;
+}
+.winning-message button {
+  font-size: 3rem;
+  background-color: transparent;
+  padding: 0.25em 0.5em;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease;
+}
+.winning-message button:hover {
+  transform: scale(1.05);
+}
+.winning-message button:active {
+  transform: scale(0.9);
+}
+.winning-message.show {
+  top: 0;
+}
+.winningContainer {
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 600px;
+  height: 700px;
+  background-image: url(./Assets/Images/testbg.png);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.winningContainer > div {
+  font-size: 2.5rem;
+  font-family: "Oi", cursive;
+  color: transparent;
+  background: #5b1a3e;
+  -webkit-background-clip: text;
+  text-shadow: 2px 5px 5px rgba(185, 92, 15, 0.4);
+}
+/* --WINNING MESSAGE END-- */
+#tictactoe {
+  font-size: 3rem;
+  font-family: "Oi", cursive;
+  color: transparent;
+  background: white;
+  -webkit-background-clip: text;
+  text-shadow: 2px 5px 5px rgba(185, 92, 15, 0.4);
+}
+.selectFirstPlayer {
+  position: absolute;
+  top: -1000px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.4s ease;
+}
+#selectPlayer {
+  font-size: 2.5rem;
+  font-family: "Oi", cursive;
+  color: transparent;
+  background: #5b1a3e;
+  -webkit-background-clip: text;
+  text-shadow: 2px 5px 5px rgba(185, 92, 15, 0.4);
+}
+.selectplayerContainer {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 700px;
+  margin: auto;
+  background-image: url(./Assets/Images/testbg.png);
+  padding: 3rem;
+}
+#playerChoice {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.selectFirstPlayer button {
+  font-size: 3rem;
+  cursor: pointer;
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+  transition: all 0.2s ease;
+}
+.selectFirstPlayer button:hover {
+  transform: scale(1.05);
+}
+.selectFirstPlayer button:active {
+  transform: scale(0.9);
+}
+.selectFirstPlayer.show {
+  top: 0;
+}
+.selectFirstPlayer button img {
+  width: 200px;
+}
+
+.navigation {
+  width: 50vw;
+  display: none;
+  justify-content: space-around;
+  margin: 1rem auto;
+  z-index: 8;
+}
+.navigation button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  transition: all 0.2s ease;
+}
+.navigation button:hover {
+  transform: scale(1.05);
+}
+.navigation button:active {
+  transform: scale(0.9);
+}
+.navigation button img {
+  width: 200px;
+}
+
+.navigation.show {
+  display: flex;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  text-align: center;
+  background-color: #282828;
+  padding: 0.25rem 0;
+}
+.footer a {
+  text-decoration: none;
+  color: white;
+}
+@media only screen and (max-width: 768px) {
+  .navigation {
+    width: 100vw;
+    transform: scale(0.6);
+  }
+  .selectplayerContainer,
+  .winningContainer {
+    transform: scale(0.7);
+    position: absolute;
+    top: -150px;
+    background-image: url(./Assets/Images/testbg2.png);
+    height: 900px;
+  }
+}
