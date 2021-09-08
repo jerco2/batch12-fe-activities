@@ -32,17 +32,19 @@ let move = "";
 let currentClass = "";
 let history = [];
 
+selectFirstPlayer.classList.add("show");
+
 /* --SELECT WHO'S TURN FIRST
     BOARD CLASS ADD x or o */
 selectPlayerX.addEventListener("click", () => {
   currentClass = xClass;
   board.classList.add(currentClass);
-  selectFirstPlayer.classList.add("off");
+  selectFirstPlayer.classList.remove("show");
 });
 selectPlayerO.addEventListener("click", () => {
   currentClass = oClass;
   board.classList.add(currentClass);
-  selectFirstPlayer.classList.add("off");
+  selectFirstPlayer.classList.remove("show");
 });
 
 /* --PLAYER ACTION ON CLICK-- */
