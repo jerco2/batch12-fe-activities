@@ -1,62 +1,17 @@
-@media only screen and (max-width: 768px){
-    #header{
-        background-color: white;
-        overflow:hidden;
-    }
-    #header div{
-        top:30%;
-        margin-left:0;
-        display:flex;
-        width:100vw;
-        flex-direction: column;
-        align-items: center;
-    }
-    #seemyworks-btn{
-        margin:0;
-    }
-    #header h2{
-        font-size: 5vw;
-    }
-    #header h1{
-        font-size:8vw;
-    }
-    #header h3{
-        font-size:3vw;
-        animation: none;
-        margin-bottom:1rem;
-    }
-    #header img{
-        position:absolute;
-        top:60%;
-        left:-150px;
-        transform: scale(2);
-    }
-    #myworks{
-        flex-direction: column;
-        width:100vw;
-    }
-    #myworks a{
-        padding:1rem;
-    }
-    #myworks a img {
-        margin:auto;
-        width: 70vw;
-        border-radius: 10px;
-    }
-    #myworks a img:hover{
-        transform: none;
-    }
-    .myworkstext-container{
-        width:100vw;
-    }
-    .carousel-container{
-        width:100vw;
-    }
+@media only screen and (max-width: 768px) {
+  #myworks {
+    flex-direction: column;
+    width: 100vw;
+  }
+  .item {
+    height: 150px;
+    width: 100px;
+  }
 }
 
-@media only screen and (max-height:600px){
-    #header img{
-        transform:scale(1.5);
-        left:-100px;
-    }
+@media only screen and (max-height: 600px) {
+  #header img {
+    transform: scale(1.5);
+    left: -100px;
+  }
 }
