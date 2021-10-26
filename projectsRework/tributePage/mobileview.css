@@ -1,4 +1,10 @@
 @media only screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  main {
+    overflow-x: hidden;
+  }
   .navbar {
     flex-direction: column;
     align-items: center;
@@ -10,6 +16,7 @@
   }
   .iconLogo img {
     padding-left: 5px;
+    overflow-x: hidden;
   }
   .iconLogo button {
     display: block;
@@ -49,16 +56,20 @@
   .header {
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
   }
   #image {
     height: 100vh;
     width: auto;
     transform: translateX(-25%);
-    overflow-x: hidden;
+    overflow: hidden;
     clip-path: none;
   }
+  #titleContainer {
+    padding: 20px;
+  }
   #title {
-    font-size: 5.5vh;
+    font-size: 6vh;
   }
   #img-caption {
     font-size: 1.5vh;
@@ -68,5 +79,15 @@
   }
   .info {
     width: 55vw;
+  }
+
+  .imageContainer {
+    width: 100vw;
+  }
+  .Biography {
+    clip-path: polygon(0 0, 100% 2%, 100% 100%, 0% 100%);
+  }
+  #albums {
+    overflow-x: hidden;
   }
 }
