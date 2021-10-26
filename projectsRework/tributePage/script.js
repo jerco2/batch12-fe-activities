@@ -11,17 +11,21 @@ var lastScrollTop = 0;
 
 // ----- divs slides in on scroll -----
 window.addEventListener("scroll", function () {
-  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  if (scrollTop > lastScrollTop) {
-    navbar.style.top = "-80px";
+  if (body.style.width < 768) {
+    return;
   } else {
-    navbar.style.top = "0";
-  }
-  lastScrollTop = scrollTop;
-  if (image.style.top === 0) {
-    navbar.style.display = "none";
-  } else {
-    navbar.style.display = "flex";
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+      navbar.style.top = "-80px";
+    } else {
+      navbar.style.top = "0";
+    }
+    lastScrollTop = scrollTop;
+    if (image.style.top === 0) {
+      navbar.style.display = "none";
+    } else {
+      navbar.style.display = "flex";
+    }
   }
 });
 var sliders = document.querySelectorAll(".slide-in");

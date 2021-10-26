@@ -8,9 +8,9 @@
   scroll-behavior: smooth;
 }
 body {
-  overflow-x: hidden;
   font-family: "Josefin Sans", sans-serif;
   line-height: 25px;
+  overflow-x: hidden;
 }
 .main {
   width: 100vw;
