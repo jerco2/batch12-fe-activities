@@ -11,22 +11,22 @@ var lastScrollTop = 0;
 
 // ----- divs slides in on scroll -----
 window.addEventListener("scroll", function () {
-  if (body.style.width < 768) {
-    return;
+  // if (body.style.width < 768) {
+  //   return;
+  // } else {
+  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  if (scrollTop > lastScrollTop) {
+    navbar.style.top = "-80px";
   } else {
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop > lastScrollTop) {
-      navbar.style.top = "-80px";
-    } else {
-      navbar.style.top = "0";
-    }
-    lastScrollTop = scrollTop;
-    if (image.style.top === 0) {
-      navbar.style.display = "none";
-    } else {
-      navbar.style.display = "flex";
-    }
+    navbar.style.top = "0";
   }
+  lastScrollTop = scrollTop;
+  if (image.style.top === 0) {
+    navbar.style.display = "none";
+  } else {
+    navbar.style.display = "flex";
+  }
+  // }
 });
 var sliders = document.querySelectorAll(".slide-in");
 const appearOptions = { rootMargin: "0px 0px -200px 0px" };
