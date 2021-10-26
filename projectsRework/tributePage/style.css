@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+  font-family: "Josefin Sans", sans-serif;
+  line-height: 25px;
+}
+.main {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* start of NAVBAR div */
+.navbar {
+  width: 100vw;
+  top: 0px;
+  position: fixed;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 20px;
+  font-size: 24px;
+  background-color: rgb(32, 31, 32);
+  transition: 0.2s ease-in;
+}
+.iconLogo {
+  width: 50%;
+}
+.iconLogo img {
+  width: 250px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.iconLogo button {
+  display: none;
+}
+.navButtons {
+  width: 50%;
+  margin-right: 10px;
+  display: flex;
+  justify-content: end;
+}
+.navButtons a {
+  color: white;
+  text-decoration: none;
+  margin-left: 50px;
+  letter-spacing: 5px;
+  transition: all 0.2s ease;
+}
+.navButtons a:hover {
+  transform: scale(105%);
+}
+/* end of NAVBAR div */
+
+/* start of HEADER div */
+.header {
+  width: 100vw;
+  background-color: rgb(17, 17, 17);
+  position: relative;
+}
+#image {
+  width: 100%;
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 98%, 0 95%);
+}
+#titleContainer {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  line-height: 1;
+}
+#title {
+  font-size: 6vw;
+  margin-bottom: 10px;
+  width: 100%;
+}
+#img-caption {
+  font-size: 1vw;
+  letter-spacing: 5px;
+  font-family: "Josefin Sans", sans-serif;
+}
+#about {
+  position: absolute;
+  bottom: 20%;
+}
+/* end of HEADER div */
+
+/* start of ABOUT div */
+#infoContainer {
+  width: 100vw;
+  background-color: rgb(17, 17, 17);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+  padding-bottom: 100px;
+}
+.bar {
+  border-top: 5px solid rgb(54, 50, 15);
+  width: 20vw;
+}
+.barReversed {
+  border-top: 5px solid rgb(54, 50, 15);
+  width: 20vw;
+  margin-right: 0;
+  margin-left: auto;
+}
+#infoContainer h1 {
+  padding-top: 10px;
+  text-align: center;
+  color: white;
+  letter-spacing: 20px;
+}
+#infoContainer p {
+  width: 50%;
+  color: white;
+  text-align: justify;
+  margin-left: auto;
+  margin-right: auto;
+}
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+.info {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  width: 50%;
+  display: flex;
+}
+.info p {
+  padding-top: 5px;
+  margin: 0;
+}
+#tribute-info {
+  margin-top: 10px;
+}
+/* end of ABOUT div */
+
+/* start of ALBUM div */
+#albums {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+  background-color: white;
+}
+#albums h1 {
+  color: black;
+  font-weight: bolder;
+  margin-bottom: 20px;
+  letter-spacing: 20px;
+}
+.imageContainer {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.albumImage {
+  width: 250px;
+  height: 150px;
+  margin: 5px 25px;
+}
+/* end of ALBUM div */
+
+/* start of BIOGRAPHY div */
+.Biography {
+  width: 100vw;
+  background-color: rgb(17, 17, 17);
+  padding: 100px 0;
+  clip-path: polygon(0 0, 100% 5%, 100% 100%, 0% 100%);
+}
+
+.bio1,
+.bio2,
+.bio3 {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  color: white;
+  padding: 10px;
+  margin-bottom: 30px;
+  opacity: 0;
+  transition: all 2s ease;
+}
+.bio1 {
+  transform: translateX(-50%);
+}
+.bio2 {
+  transform: translateX(50%);
+}
+.bio3 {
+  transform: translateX(-50%);
+}
+.bio1.appear,
+.bio2.appear,
+.bio3.appear {
+  transform: translateX(0);
+  opacity: 1;
+}
+.bio1 h2,
+.bio2 h2,
+.bio3 h2 {
+  margin-bottom: 10px;
+  letter-spacing: 10px;
+}
+
+/* end of BIOGRAPHY div */
+
+/* start of LINKBUTTON div */
+.linkButton {
+  background-color: rgb(17, 17, 17);
+  display: flex;
+  justify-content: center;
+}
+.linkButton button {
+  border: 1px solid white;
+  background-color: rgb(17, 17, 17);
+  color: white;
+  padding: 1rem 2rem;
+  margin-bottom: 50px;
+  transition: all 0.3s ease;
+}
+.linkButton button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: rgba(17, 17, 17);
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+/* end of LINKBUTTON div */
+
+/* start of FOOTER div */
+footer {
+  text-align: center;
+  font-size: 20px;
+}
+/* end of FOOTER div */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(17, 17, 17);
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}

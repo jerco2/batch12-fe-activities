@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="stylesheet" type="text/css" href="./mobileview.css"/>
+    <script defer type="text/javascript" src="./script.js"></script>
+    <title>Tribute Page - Rework</title>
+  </head>
+  <!-- show scroll bar upon mousewheel activity -->
+  <body onwheel="this.style.overflowY='scroll'">
+    <!-- USER STORY #1 : As a user, I want my tribute page to have an element
+    with a corresponding id="main", which contains all other elements. -->
+    <main id="main">
+      <nav class="navbar">
+        <div class="iconLogo">
+          <img src="./assets/icon.png" />
+          <button id="burger">&#9776;</button>
+        </div>
+        <div class="navButtons">
+          <a href="#">HOME</a>
+          <a href="#about">ABOUT</a>
+          <a href="#albums">GALLERY</a>
+        </div>
+      </nav>
+      <div class="header">
+        <!-- USER STORY #3 : As a user, I want to see a div element with a corresponding
+        id="img-div". -->
+        <div id="img-div">
+          <!-- USER STORY #4 : As a user , I want to see an img  element with a corresponding 
+            id="image" within the 'img-div' element. -->
+          <img id="image" src="./assets/imageCover.jpg" />
+        </div>
+        <div id="titleContainer">
+          <!-- USER STORY #2 : As a user, I want to see an element with a
+            corresponding id="title", which contains a string that describe the subject
+            of the tribute page. -->
+          <h1 id="title">JONATHAN "JOHN" WICK</h1>
+          <!-- USER STORY #5: As a user, I want to see an element with a corresponding
+        id="img-caption" that contains text content describing the image show in img-div -->
+          <h2 id="img-caption">THE MAN SENT TO KILL THE BOOGEYMAN</h2>
+        </div>
+        <div id="about"></div>
+      </div>
+      <div id="infoContainer">
+        <div class="bar"></div>
+        <h1>ABOUT</h1>
+        <!-- USER STORY #6: As a user, I want to see an element with a corresponding id="tribute-info" 
+          which contains text content describing the subject of the tribute page. -->
+        <p id="tribute-info">
+          Wick is a legendary hitman who had retired until a gang invades his
+          house, steals his car, and kills the puppy that his late wife Helen
+          had given him. This sets him on a path of revenge, returning to the
+          criminal underworld and eventually coming into conflict with the
+          international organization of assassins of which he was once a part.
+          <br />
+          <br />
+          <div class="infoContainer">
+            <div class="info">
+              <p>Fullname:</p>
+              <p>Jardani Jovonovich (Birthname) <br/> Jonathan Wick</p>
+            </div>
+            <div class="info">
+              <p>Nationality:</p>
+              <p>Belarusian American</p>
+            </div>
+          </div>
+        </p>
+        <div class="barReversed"></div>
+      </div>
+      <div id="albums">
+        <div>
+          <h1>GALLERY</h1>
+        </div>
+        <div class="imageContainer">
+          <img
+            class="albumImage"
+            src="https://coolmaterial.com/wp-content/uploads/2017/08/gun-fu-header.jpg"
+          />
+          <img
+            class="albumImage"
+            src="https://occ-0-1068-92.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABaJoKp-0ldJQoroL5d04k8YCukUQOuYMOFQEp8B77K5n3hhFu-2q0q-v4tPn-I66Nbbflq9ynfMNzaifgv9uZLjzHG1N.jpg?r=595"
+          />
+          <img
+            class="albumImage"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMVybnxIcfiRxODblM5g00VsRk3PCqqANJlRtZ3HGhn-UxCwpykMK3pfhQeYsPSdLivdU&usqp=CAU"
+          />
+          <img
+            class="albumImage"
+            src="https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/815/cached.offlinehbpl.hbpl.co.uk/news/SUC/jw3-20170207101634789.jpg"
+          />
+          <img
+            class="albumImage"
+            src="https://variety.com/wp-content/uploads/2018/03/john-wick-3.jpg?w=1000"
+          />
+          <img
+            class="albumImage"
+            src="https://images05.military.com/sites/default/files/styles/full/public/2019-01/john-wick-3-youtube1050.jpg"
+          />
+          <img
+            class="albumImage"
+            src="https://static01.nyt.com/images/2019/05/18/arts/johnwick-anatomy/johnwick-anatomy-videoSixteenByNine1050-v2.jpg"
+          />
+          <img
+            class="albumImage"
+            src="https://www.looper.com/img/gallery/heres-how-long-keanu-reeves-said-hell-play-john-wick-for/intro-1598907086.jpg"
+          />
+          <img
+            class="albumImage"
+            src="https://static01.nyt.com/images/2019/05/16/arts/johnwick-carscene/johnwick-carscene-videoSixteenByNine1050.png"
+          />
+        </div>
+      </div>
+      <!-- USER STORY #10: As a user, I want to read a post, article, or story about the person with at least
+      2 headings in h1 ... h6, and paragraphs in p -->
+      <div class="Biography">
+        <div class="bio1 slide-in from-left">
+          <h2>2014</h2>
+          <p>
+            Following Helen's death from a terminal illness, Wick largely
+            remains isolated from society. He spends his days driving his prized
+            1969 Ford Mustang Mach 1, and caring for his new dog, a beagle named
+            Daisy, the last gift from his deceased wife. When Iosef Tarasov,
+            Viggo's son, breaks into his home, assaults Wick, steals his car and
+            kills Daisy, the vengeful Wick goes on a violent rampage. Knowing
+            that Wick will likely stop at nothing to kill Iosef, Viggo attempts
+            to protect his son and sends numerous assassins to stop Wick, but he
+            kills them all. Wick eventually kills both Iosef and Viggo.
+            Afterwards, Wick rescues a pit-bull puppy scheduled to be euthanized
+            from an animal shelter and returns home.
+          </p>
+        </div>
+        <div class="bio2 slide-in from-right">
+          <h2>2017</h2>
+          <p>
+            After taking revenge on the Tarasovs, Wick retrieves his prized car
+            from Viggo's brother, Abram, and forms a truce with him. Wick's
+            hopes of returning to retirement are ruined by Camorra crime boss
+            Santino D'Antonio, who demands he complete his blood oath and
+            assassinate Santino's own sister, Gianna D'Antonio, allowing Santino
+            to take her place at The High Table. Wick refuses, and Santino
+            retaliates by destroying his house. Wick reluctantly travels to Rome
+            and fulfills the oath, only to realize that Santino is targeting him
+            for killing Gianna. Santino sends his bodyguard Ares and Gianna's
+            former bodyguard Cassian after Wick, but ultimately Wick kills both.
+            Santino places a $7 million bounty on Wick's head, after which Wick
+            enlists assistance from the Bowery King. Wick, after massacring
+            hordes of assassins, eventually finds Santino in the Continental,
+            where no bloodshed is permitted. Wick breaks the rule by killing
+            Santino on the hotel premises, forcing Winston to declare him
+            "excommunicado", meaning that he has been thrown out of the
+            Continental without any way to call on it again for help. Winston,
+            however, gives Wick one hour to flee before the excommunicado
+            becomes active and the bounty on his head is doubled and offered
+            globally by The High Table.
+          </p>
+        </div>
+        <div class="bio3 slide-in from-left">
+          <h2>2019</h2>
+          <p>
+            Excommunicated, exhausted, and wounded, Wick prepares to escape from
+            New York as assassins gather to kill him after learning of the
+            enaction of the $14 million bounty on his head. Fleeing to Morocco
+            using his former allegiances, Wick meets with Sofia, an old friend,
+            manager of the Moroccan Continental, and someone whose marker Wick
+            holds for rescuing Sofia's daughter. Sofia helps him find the Elder,
+            the one man who's above the High Table itself. The Elder agrees to
+            rescind the excommunicado in return for Wick killing Winston and
+            serving the High Table for the remainder of his life. Wick severs
+            his ring finger and offers his wedding ring to the Elder to prove
+            his fealty. Wick then returns to New York and is pursued by
+            assassins until he reaches the safe haven of the Continental. Wick
+            reunites with Winston but decides to spare him. Instead, Wick and
+            the hotel's concierge, Charon, fight against the High Table and
+            their enforcers. Successfully defeating waves of attackers, Winston
+            and High Table representative, The Adjudicator, have a parley on the
+            hotel roof. Ultimately, Winston knowingly shoots Wick in his
+            bulletproof jacket multiple times to restore his standing with the
+            High Table, while not wanting to betray him, and Wick tumbles from
+            the roof into the street. The Bowery King, recovering from grave
+            wounds inflicted by The Adjudicator's assassin named Zero, retrieves
+            the badly injured Wick in his hideout, where he tells Wick that he
+            plans to declare war against the High Table and Wick agrees to join
+            him.
+          </p>
+        </div>
+      </div>
+      <div class="linkButton">
+        <!-- USER STORY #7: As a user, I want to see an element with a corresponding id="tribute-link",
+          which links to an outside site that contains additional information about the subject of the tribute page -->
+        <a
+          id="tribute-link"
+          target="_blank"
+          href="https://en.wikipedia.org/wiki/John_Wick_(character)"
+        >
+          <button>READ MORE</button></a
+        >
+      </div>
+      <footer>
+        <h6>This website is created for learning purpose only.</h6>
+      </footer>
+    </main>
+  </body>
+</html>
