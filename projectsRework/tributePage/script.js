@@ -11,9 +11,6 @@ var lastScrollTop = 0;
 
 // ----- divs slides in on scroll -----
 window.addEventListener("scroll", function () {
-  // if (body.style.width < 768) {
-  //   return;
-  // } else {
   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   if (scrollTop > lastScrollTop) {
     navbar.style.top = "-80px";
@@ -26,7 +23,6 @@ window.addEventListener("scroll", function () {
   } else {
     navbar.style.display = "flex";
   }
-  // }
 });
 var sliders = document.querySelectorAll(".slide-in");
 const appearOptions = { rootMargin: "0px 0px -200px 0px" };
