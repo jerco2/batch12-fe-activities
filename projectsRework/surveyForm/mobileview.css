@@ -1,0 +1,21 @@
+@media only screen and (max-width: 768px) {
+  body {
+    overflow: hidden;
+  }
+  .Container {
+    width: 100vw;
+    height: 100vh;
+  }
+  .TitleContainer {
+    transform: translateY(-10%);
+  }
+  .SurveyContainer {
+    border-left: none;
+  }
+
+  #nameInput,
+  #emailInput,
+  #numberInput {
+    width: 75vw;
+  }
+}

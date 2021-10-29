@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="stylesheet" type="text/css" href="./mobileview.css" />
+
+    <script defer src="./script.js"></script>
+    <title>Survey Form - Rework</title>
+  </head>
+  <body>
+    <main>
+      <div class="Container">
+        <!-- TITLE -->
+        <div class="TitleContainer">
+          <img id="catCoffee" src="./assets/images/catCoffee.gif" />
+          <h1>How was your coffee experience?</h1>
+          <button id="takeSurveyButton">Take a survey</button>
+        </div>
+        <!-- SURVEY CONTAINER -->
+        <div class="SurveyContainer">
+          <div class="SurveyForm">
+            <!-- SURVEY FORM -->
+            <form id="survey-form">
+              <!-- NAME -->
+              <div id="nameForm" class="input">
+                <div class="inputLabel">
+                  <label>ENTER YOUR FULLNAME:</label>
+                </div>
+                <div class="userInput">
+                  <input
+                    id="nameInput"
+                    type="text"
+                    name="name"
+                    placeholder="e.g. Jerico Godoy"
+                  />
+                </div>
+                <h5 id="nameInputError" class="errorMessage">
+                  Field empty, please fill in.
+                </h5>
+                <button class="nextButton" id="nameFormNextButton">
+                  <i class="fa fa-chevron-circle-right"></i>
+                </button>
+              </div>
+              <!-- EMAIL -->
+              <div id="emailForm" class="input">
+                <div class="inputLabel"><label>ENTER YOUR EMAIL:</label></div>
+                <div class="userInput">
+                  <input
+                    id="emailInput"
+                    type="email"
+                    name="email"
+                    placeholder="e.g. sample-email@gmail.com"
+                  />
+                </div>
+                <h5 id="emailInputError" class="errorMessage">
+                  Field empty, please fill in.
+                </h5>
+                <button class="backButton" id="emailFormBackButton">
+                  <i class="fa fa-chevron-circle-left"></i>
+                </button>
+                <button class="nextButton" id="emailFormNextButton">
+                  <i class="fa fa-chevron-circle-right"></i>
+                </button>
+              </div>
+              <!-- NUMBER -->
+              <div id="numberForm" class="input">
+                <div class="inputLabel"><label>ENTER YOUR NUMBER:</label></div>
+                <div class="userInput">
+                  <input
+                    id="numberInput"
+                    type="text"
+                    name="number"
+                    placeholder="e.g. 09123456789"
+                  />
+                </div>
+                <button class="backButton" id="numberFormBackButton">
+                  <i class="fa fa-chevron-circle-left"></i>
+                </button>
+                <button class="nextButton" id="numberFormNextButton">
+                  <i class="fa fa-chevron-circle-right"></i>
+                </button>
+              </div>
+              <!-- SUBMIT -->
+              <div id="submitForm" class="input">
+                <button class="backButton" id="submitFormBackButton">
+                  <i class="fa fa-chevron-circle-left"></i>
+                </button>
+                <input type="Submit" name="SUBMIT" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
