@@ -56,6 +56,7 @@ nameFormNextButton.addEventListener("click", function (e) {
   } else {
     errorStyleOff(nameInput, nameInputError);
     nextFunction(nameForm, emailForm);
+    emailInput.select();
   }
 });
 emailFormNextButton.addEventListener("click", function (e) {
@@ -70,6 +71,7 @@ emailFormNextButton.addEventListener("click", function (e) {
   } else if (valid === true) {
     errorStyleOff(emailInput, emailInputError);
     nextFunction(emailForm, numberForm);
+    numberInput.select();
   } else {
     emailInputError.innerHTML = "Invalid email format";
     errorStyleOn(emailInput, emailInputError);
