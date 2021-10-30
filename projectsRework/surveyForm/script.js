@@ -28,10 +28,9 @@ takeSurveyBTN.addEventListener("click", function () {
   surveyContainer.style.left = "0";
 });
 
-const nextFunction = (formA, formB, input) => {
+const nextFunction = (formA, formB) => {
   formA.style.left = "-100%";
   formB.style.left = "0";
-  input.select();
 };
 const backFunction = (formA, formB, input) => {
   formA.style.left = "0";
@@ -56,7 +55,8 @@ nameFormNextButton.addEventListener("click", function (e) {
     errorStyleOn(nameInput, nameInputError);
   } else {
     errorStyleOff(nameInput, nameInputError);
-    nextFunction(nameForm, emailForm, emailInput);
+    nextFunction(nameForm, emailForm);
+    emailInput.select();
   }
 });
 emailFormNextButton.addEventListener("click", function (e) {
@@ -70,7 +70,8 @@ emailFormNextButton.addEventListener("click", function (e) {
     errorStyleOn(emailInput, emailInputError);
   } else if (valid === true) {
     errorStyleOff(emailInput, emailInputError);
-    nextFunction(emailForm, numberForm, numberInput);
+    nextFunction(emailForm, numberForm);
+    numberInput.select();
   } else {
     emailInputError.innerHTML = "Invalid email format";
     errorStyleOn(emailInput, emailInputError);
