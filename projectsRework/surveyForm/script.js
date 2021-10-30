@@ -89,6 +89,8 @@ numberFormNextButton.addEventListener("click", function (e) {
 surveyIntroForm.addEventListener("click", function (e) {
   e.preventDefault();
   nextFunction(surveyIntroForm, questionForm);
+  questionForm.style.display = "flex";
+  questionForm.style.opacity = "1";
 });
 
 // NUMBER INPUT ONLY ACCEPTS NUMBERS

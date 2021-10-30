@@ -134,7 +134,8 @@ main {
   transition: all 0.5s ease;
 }
 
-#surveyIntroForm {
+#surveyIntroForm,
+#questionForm {
   animation: fadeIn ease 3s;
   left: 0;
   display: none;
