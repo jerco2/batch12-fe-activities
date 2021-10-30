@@ -70,7 +70,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-left: 2px solid #784520;
   background-size: cover;
   overflow: hidden;
 }
@@ -179,4 +178,15 @@ main {
   color: red;
   position: absolute;
   top: 52%;
+}
+.cbContainer {
+  display: flex;
+  justify-content: center;
+}
+.cbContainer input:hover {
+  cursor: pointer;
+}
+
+#submitBtn {
+  margin-top: 20px;
 }
