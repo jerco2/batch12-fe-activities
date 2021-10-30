@@ -28,13 +28,15 @@ takeSurveyBTN.addEventListener("click", function () {
   surveyContainer.style.left = "0";
 });
 
-const nextFunction = (formA, formB) => {
+const nextFunction = (formA, formB, input) => {
   formA.style.left = "-100%";
   formB.style.left = "0";
+  input.select();
 };
-const backFunction = (formA, formB) => {
+const backFunction = (formA, formB, input) => {
   formA.style.left = "0";
   formB.style.left = "100%";
+  input.focus();
 };
 
 // ERROR MESSAGE
@@ -54,7 +56,7 @@ nameFormNextButton.addEventListener("click", function (e) {
     errorStyleOn(nameInput, nameInputError);
   } else {
     errorStyleOff(nameInput, nameInputError);
-    nextFunction(nameForm, emailForm);
+    nextFunction(nameForm, emailForm, emailInput);
   }
 });
 emailFormNextButton.addEventListener("click", function (e) {
@@ -68,7 +70,7 @@ emailFormNextButton.addEventListener("click", function (e) {
     errorStyleOn(emailInput, emailInputError);
   } else if (valid === true) {
     errorStyleOff(emailInput, emailInputError);
-    nextFunction(emailForm, numberForm);
+    nextFunction(emailForm, numberForm, numberInput);
   } else {
     emailInputError.innerHTML = "Invalid email format";
     errorStyleOn(emailInput, emailInputError);
@@ -101,13 +103,9 @@ numberInput.addEventListener("keypress", function (e) {
 // BACK BUTTONS FUNCTIONS
 emailFormBackButton.addEventListener("click", function (e) {
   e.preventDefault();
-  backFunction(nameForm, emailForm);
+  backFunction(nameForm, emailForm, nameInput);
 });
 numberFormBackButton.addEventListener("click", function (e) {
   e.preventDefault();
-  backFunction(emailForm, numberForm);
-});
-surveyIntroFormBackButton.addEventListener("click", function (e) {
-  e.preventDefault();
-  backFunction(numberForm, surveyIntroForm);
+  backFunction(emailForm, numberForm, emailInput);
 });
