@@ -18,4 +18,27 @@
   #numberInput {
     width: 75vw;
   }
+  #questionForm,
+  #surveyIntroForm {
+    padding: 20px;
+    text-align: center;
+  }
+  #questionForm {
+    overflow-y: scroll;
+  }
+
+  .surveyInput {
+    margin: 5px;
+  }
+  .cbContainer {
+    margin: 0;
+    padding: 0;
+  }
+  .cbContainer input {
+    margin: 0px 5px;
+  }
+
+  #submitBtn {
+    margin-top: 20px;
+  }
 }

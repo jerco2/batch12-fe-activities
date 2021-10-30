@@ -5,19 +5,22 @@ const surveyContainer = document.querySelector(".SurveyContainer");
 const nameForm = document.querySelector("#nameForm");
 const emailForm = document.querySelector("#emailForm");
 const numberForm = document.querySelector("#numberForm");
+const surveyIntroForm = document.querySelector("#surveyIntroForm");
+const questionForm = document.querySelector("#questionForm");
 
 const nameFormNextButton = document.querySelector("#nameFormNextButton");
 const emailFormNextButton = document.querySelector("#emailFormNextButton");
 const emailFormBackButton = document.querySelector("#emailFormBackButton");
 const numberFormNextButton = document.querySelector("#numberFormNextButton");
 const numberFormBackButton = document.querySelector("#numberFormBackButton");
-const submitFormBackButton = document.querySelector("#submitFormBackButton");
 
 const nameInput = document.querySelector("#nameInput");
 const emailInput = document.querySelector("#emailInput");
 const numberInput = document.querySelector("#numberInput");
+
 const nameInputError = document.querySelector("#nameInputError");
 const emailInputError = document.querySelector("#emailInputError");
+const numberInputError = document.querySelector("#numberInputError");
 
 takeSurveyBTN.addEventListener("click", function () {
   nameForm.style.left = "0";
@@ -34,6 +37,7 @@ const backFunction = (formA, formB) => {
   formB.style.left = "100%";
 };
 
+// ERROR MESSAGE
 const errorStyleOn = (elementInput, elementErrorMessage) => {
   elementInput.style.border = "1px solid red";
   elementErrorMessage.style.display = "block";
@@ -43,6 +47,7 @@ const errorStyleOff = (elementInput, elementErrorMessage) => {
   elementErrorMessage.style.display = "none";
 };
 
+// NEXT BUTTONS FUNCTIONS
 nameFormNextButton.addEventListener("click", function (e) {
   e.preventDefault();
   if (nameInput.value === "") {
@@ -52,7 +57,6 @@ nameFormNextButton.addEventListener("click", function (e) {
     nextFunction(nameForm, emailForm);
   }
 });
-
 emailFormNextButton.addEventListener("click", function (e) {
   e.preventDefault();
   let valid = false;
@@ -70,22 +74,40 @@ emailFormNextButton.addEventListener("click", function (e) {
     errorStyleOn(emailInput, emailInputError);
   }
 });
+numberFormNextButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (numberInput.value === "") {
+    errorStyleOn(numberInput, numberInputError);
+  } else {
+    errorStyleOff(numberInput, numberInputError);
+    numberForm.style.display = "none";
+    surveyIntroForm.style.display = "flex";
+    surveyIntroForm.style.opacity = "1";
+  }
+});
+surveyIntroForm.addEventListener("click", function (e) {
+  e.preventDefault();
+  nextFunction(surveyIntroForm, questionForm);
+});
 
+// NUMBER INPUT ONLY ACCEPTS NUMBERS
+numberInput.addEventListener("keypress", function (e) {
+  var ch = String.fromCharCode(e.which);
+  if (!/[0-9]/.test(ch)) {
+    e.preventDefault();
+  }
+});
+
+// BACK BUTTONS FUNCTIONS
 emailFormBackButton.addEventListener("click", function (e) {
   e.preventDefault();
   backFunction(nameForm, emailForm);
-});
-
-numberFormNextButton.addEventListener("click", function (e) {
-  e.preventDefault();
-  nextFunction(numberForm, submitForm);
 });
 numberFormBackButton.addEventListener("click", function (e) {
   e.preventDefault();
   backFunction(emailForm, numberForm);
 });
-
-submitFormBackButton.addEventListener("click", function (e) {
+surveyIntroFormBackButton.addEventListener("click", function (e) {
   e.preventDefault();
-  backFunction(numberForm, submitForm);
+  backFunction(numberForm, surveyIntroForm);
 });

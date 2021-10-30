@@ -78,8 +78,12 @@
                     type="text"
                     name="number"
                     placeholder="e.g. 09123456789"
+                    maxlength="11"
                   />
                 </div>
+                <h5 id="numberInputError" class="errorMessage">
+                  Field empty, please fill in.
+                </h5>
                 <button class="backButton" id="numberFormBackButton">
                   <i class="fa fa-chevron-circle-left"></i>
                 </button>
@@ -87,12 +91,49 @@
                   <i class="fa fa-chevron-circle-right"></i>
                 </button>
               </div>
-              <!-- SUBMIT -->
-              <div id="submitForm" class="input">
-                <button class="backButton" id="submitFormBackButton">
-                  <i class="fa fa-chevron-circle-left"></i>
-                </button>
-                <input type="Submit" name="SUBMIT" />
+              <!-- SURVEY INTRO  -->
+              <div id="surveyIntroForm" class="input">
+                <h1>Survey starts here</h1>
+                <h6>Tap anywhere to begin.</h6>
+              </div>
+              <!-- SURVEY QUESTIONS-->
+              <div id="questionForm" class="input">
+                <div class="additionalInfo">
+                  <div class="surveyInput">
+                    <label for="membership">Membership</label>
+                    <select id="membership" name="membership">
+                      <option value="NotSubscribe">Not yet a member.</option>
+                      <option value="Silver">Silver</option>
+                      <option value="Gold">Gold</option>
+                    </select>
+                  </div>
+                  <div class="surveyInput">
+                    <label for="membership">Membership</label>
+                    <select id="membership" name="membership">
+                      <option value="NotSubscribe">Not yet a member.</option>
+                      <option value="Silver">Silver</option>
+                      <option value="Gold">Gold</option>
+                    </select>
+                  </div>
+                  <div class="surveyInput">
+                    <h3>Are you subscribe to our socials?</h3>
+                    <div class="cbContainer">
+                      <input
+                        type="checkbox"
+                        name="socialA"
+                        value="facebook"
+                      />Facebook
+                      <input
+                        type="checkbox"
+                        name="socialB"
+                        value="instagram"
+                      />Instagram
+                    </div>
+                  </div>
+                </div>
+                <div class="radioButtonContainer"></div>
+
+                <input id="submitBtn" type="Submit" name="SUBMIT" />
               </div>
             </form>
           </div>
