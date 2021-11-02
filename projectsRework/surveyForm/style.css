@@ -118,7 +118,11 @@ main {
 .userInput input::placeholder {
   opacity: 0.8;
 }
-
+.choices {
+  margin-top: 3px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
 #nameForm,
 #emailForm,
 #numberForm,
@@ -191,4 +195,22 @@ main {
 
 #submitBtn {
   margin-top: 20px;
+}
+
+input[type="radio"] {
+  cursor: pointer;
+}
+input[type="checkbox"] {
+  font-weight: bold;
+}
+
+input[type="radio"]:checked:after {
+  width: 14px;
+  height: 14px;
+  border-radius: 14px;
+  position: relative;
+  background-color: #784520;
+  content: "";
+  display: inline-block;
+  visibility: visible;
 }

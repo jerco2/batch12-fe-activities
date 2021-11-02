@@ -108,14 +108,6 @@
                     </select>
                   </div>
                   <div class="surveyInput">
-                    <label for="membership">Membership</label>
-                    <select id="membership" name="membership">
-                      <option value="NotSubscribe">Not yet a member.</option>
-                      <option value="Silver">Silver</option>
-                      <option value="Gold">Gold</option>
-                    </select>
-                  </div>
-                  <div class="surveyInput">
                     <h3>Are you subscribe to our socials?</h3>
                     <div class="cbContainer">
                       <input
@@ -131,8 +123,41 @@
                     </div>
                   </div>
                 </div>
-                <div class="radioButtonContainer"></div>
-
+                <br /><br />
+                <div class="radioButtonContainer">
+                  <div class="surveyInput">
+                    <label for="membership"
+                      >1. How often do you drink coffee?</label
+                    >
+                    <div class="choices">
+                      <input type="radio" name="howOften" value="daily" />Daily
+                      <input
+                        type="radio"
+                        name="howOften"
+                        value="weekly"
+                      />Weekly
+                      <input
+                        type="radio"
+                        name="howOften"
+                        value="occasionally"
+                      />Occasionally
+                    </div>
+                  </div>
+                  <div class="surveyInput">
+                    <label for="membership">2. When do you drink coffee?</label>
+                    <div class="choices">
+                      <input type="radio" name="when" value="morning" />Morning
+                      <input type="radio" name="when" value="noon" />Noon
+                      <input
+                        type="radio"
+                        name="when"
+                        value="afternoon"
+                      />Afternoon
+                      <input type="radio" name="when" value="evening" />Evening
+                      <input type="radio" name="when" value="anytime" />Anytime
+                    </div>
+                  </div>
+                </div>
                 <input id="submitBtn" type="Submit" name="SUBMIT" />
               </div>
             </form>
